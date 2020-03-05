@@ -1,0 +1,5 @@
+subscription_id = "3ce1e65b-0d33-4c30-b8f0-d9414f79745c"
+client_id       = "0b526e96-2818-43fa-9426-b8b35ac59b99"
+tenant_id       = "75bb3457-a1e3-4772-a7fa-7369bcaa8f3c"
+client_secret   = "RbmDz5kHsDfC52fW_P5=YHl=?50Rc5e]"
+keyData         = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGohpqAIiQO6xTwTStlF8FOlHoTS9ezANcFEjCHRAXY1ryyKgasbkx3XoXyiX3LhzBiBdVl83GDrhumbci2cybZOWY8iSS+Dls6/qhZni1u7uRfcKyv5p/JLCE8pqSMuFdUICMhgJ3dOf/GYU3bqGu97Rao6MZmcRtbcO6rqblX+Ba8dsPwlBU6YY/u6Mbd//huhmAGDD91ksKyJL4DTf5KauYXTjFuBMwEE2l7LtnNhXKuA5PALDP4J1QwJs8Tdm3uO48NtVmkIN0SPABk8xk7Fqdu4iNtvko1W2zrmOsHjXdpZvASBBrMCRldMcUFNh4x0+jnSNiBwgBF+FOhykL stage@CentOs.formation"

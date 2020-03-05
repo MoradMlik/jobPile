@@ -1,0 +1,18 @@
+name= "tp-final"
+location= "francecentral"
+owner= "morad"
+version= "1.44.0"
+name_vnet= "PileVnet"
+add_space= [ "10.0.0.0/16" ]
+add_prefix1= "10.0.2.0/24"
+add_prefix3= "10.0.5.0/24"
+name_pubIp1= "pubIP1"
+name_subnet3= "Subnet3"
+name_nsg3= "Nsg3"
+allocation_method= "Dynamic"
+nameNIC5= "NIC5"
+nameNICconfig5= "NICconfig5"
+nameVM5= "NginxVm"
+vmSize3= "Standard_B1s"
+computer_name5= "NginxVm"
+
