@@ -6,7 +6,7 @@ resource "azurerm_resource_group" "rg" {
     }
 }
 #créer un virtual network
-resource "azurerm_virtual_network" "PileVnet" {
+ resource "azurerm_virtual_network" "PileVnet" {
     name= "${var.name_vnet}"
     address_space= "${var.add_space}"
     location= "${var.location}"
@@ -53,6 +53,7 @@ resource "azurerm_public_ip" "MyFirstPubIp" {
    location= "${var.location}"
    resource_group_name= "${var.name}"
    allocation_method= "${var.allocation_method}"
+   domain_name_label= "nginx-om"
 }
 resource "azurerm_network_interface" "NginxNIC" {
     name= "${var.nameNIC5}"
@@ -96,17 +97,23 @@ resource "azurerm_virtual_machine" "NginxVM" {
             key_data= "${var.keyData}"
         }
     }
-
-    resource "azurerm_dns_zone" "dns-zone" {
-        name= "francecentral.cloudapp.azure.com"
-        resource_group_name = "${azurerm_resource_group.rg.name}"
-    }
-
-    resource "azurerm_dns_a_record" "dns-record" {
-        name                = "nginx-om"
-        zone_name           = "${azurerm_dns_zone.dns-zone.name}"
-        resource_group_name = "${azurerm_resource_group.rg.name}"
-        ttl                 = 400000
-        target_resource_id = "${azurerm_public_ip.MyFirstPubIp.id}"
-    }
 }
+
+    # resource "azurerm_dns_zone" "dnszone" {
+    #     name= "francecentral.cloudapp.azure.com"
+    #     resource_group_name = "${azurerm_resource_group.rg.name}"
+    # }
+
+    # resource "azurerm_dns_a_record" "dnsrecord" {
+    #     name                = "nginx-om"
+    #     zone_name           = "${azurerm_dns_zone.dnszone.name}"
+    #     resource_group_name = "${azurerm_resource_group.rg.name}"
+    #     ttl                 = 400000
+    #     target_resource_id = "${azurerm_public_ip.MyFirstPubIp.id}"
+    # }
+
+#     resource "azure_dns_server" "dns" {
+#         name        = "nginx-om"
+#         dns_address = "${azurerm_public_ip.MyFirstPubIp.ip}"
+# }
+
