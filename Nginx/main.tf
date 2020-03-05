@@ -96,4 +96,17 @@ resource "azurerm_virtual_machine" "NginxVM" {
             key_data= "${var.keyData}"
         }
     }
+
+    resource "azurerm_dns_zone" "dns-zone" {
+        name= "francecentral.cloudapp.azure.com"
+        resource_group_name = "${azurerm_resource_group.rg.name}"
+    }
+
+    resource "azurerm_dns_a_record" "dns-record" {
+        name                = "nginx-om"
+        zone_name           = "${azurerm_dns_zone.dns-zone.name}"
+        resource_group_name = "${azurerm_resource_group.rg.name}"
+        ttl                 = 400000
+        target_resource_id = "${azurerm_public_ip.MyFirstPubIp.id}"
+    }
 }
