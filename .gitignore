@@ -1,0 +1,3 @@
+Nginx/.terraform/*
+Prod/.terraform/*
+Test/.terraform/*
