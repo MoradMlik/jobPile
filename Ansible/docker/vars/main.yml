@@ -1,0 +1,4 @@
+---
+# vars file for docker
+liste: ['docker', 'docker-common', 'docker-engine']
+var_port: default

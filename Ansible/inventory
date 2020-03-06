@@ -1,0 +1,10 @@
+
+
+nginx ansible_host=20.43.61.109 ansible_port=22 ansible_user=morad
+
+[vagrant]
+192.168.1.145:2254
+192.168.1.28:2251
+
+[Nginx]
+nginx

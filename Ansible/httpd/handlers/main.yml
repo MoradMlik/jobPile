@@ -1,0 +1,6 @@
+---
+# handlers file for httpd
+- name: restart httpd service
+  service: 
+   name: "{{ target_service }}"
+   state: "{{ target_state }} "

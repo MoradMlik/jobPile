@@ -1,0 +1,16 @@
+---
+# tasks file for mongodb
+- name: Include OS-specific variables
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: Include OS-specific variables defaults
+  include_vars:
+    file: "defaults/{{ ansible_os_family }}.yml"
+
+- name: Install packages dependencies
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ mongodb_packages_dependencies | default([]) }}"
+
+- include: setup-RedHat.yml

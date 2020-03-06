@@ -1,0 +1,25 @@
+---
+# tasks file for httpd
+- name: Module Yum
+  yum:
+    name: httpd
+    state: latest
+  notify: 
+    - start httpd
+- name: create index.html file
+  file: 
+    name: /var/www/html/index.html
+    state: touch
+- name: Changement de port
+  template:
+    src: httpd_conf.j2
+    dest: /etc/httpd/conf/httpd.conf
+- name: Copie de fichier
+  copy:
+    src: git.yml 
+    dest: /vagrant_data/
+- name: add web content
+  lineinfile:
+    line: " ceci est un test {,} veuillez ne pas en tenir compte"
+    line: " Je vous remercie "
+    path: /var/www/html/index.html
