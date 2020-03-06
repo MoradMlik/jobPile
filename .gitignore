@@ -1,3 +1,7 @@
 Nginx/.terraform/*
 Prod/.terraform/*
 Test/.terraform/*
+
+Nginx/backend.tfvars
+Test/backend.tfvars
+Prod/backend.tfvars
