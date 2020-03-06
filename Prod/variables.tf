@@ -12,7 +12,7 @@ variable "add_space" {
 }
 variable "name_subnet4" {}
 variable "add_prefix4" {}
-variable "name_pubIp1" {}
+variable "name_pubIp2" {}
 
 
 variable "name_nsg4" {}

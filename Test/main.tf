@@ -1,10 +1,16 @@
-data "azurerm_resource_group" "rg"{
+resource "azurerm_resource_group" "rg"{
     name= "${var.name}"
+    location= "${var.location}"
+    tags {
+      owner= "${var.owner}"
+    }
 }
 
 #créer un virtual network
-data "azurerm_virtual_network" "PileVnet"{
+resource "azurerm_virtual_network" "PileVnet"{
     name= "${var.name_vnet}"
+    address_space= "${var.add_space}"
+    location= "${var.location}" 
     resource_group_name= "${var.name}"
 }
 
@@ -45,12 +51,13 @@ resource "azurerm_network_security_group" "MySecondnsg" {
   }
 }
 
-#resource "azurerm_public_ip" "MyFirstPubIp" {
-#    name= "${var.name_pubIp1}"
-#    location= "${var.location}"
-#    resource_group_name= "${var.name}"
-#    allocation_method= "${var.allocation_method}"
-#}
+resource "azurerm_public_ip" "MyFirstPubIp" {
+    name= "${var.name_pubIp1}"
+    location= "${var.location}"
+    resource_group_name= "${var.name}"
+    allocation_method= "${var.allocation_method}"
+    domain_name_label= "test-om"
+}
 
 resource "azurerm_network_interface" "TestNIC" {
     name= "${var.nameNIC3}"
@@ -61,7 +68,7 @@ resource "azurerm_network_interface" "TestNIC" {
         name= "${var.nameNICconfig3}"
         subnet_id= "${azurerm_subnet.MySecondSubnet.id}"
         private_ip_address_allocation= "${var.allocation_method}"
-#	public_ip_address_id= "${azurerm_public_ip.MyFirstPubIp.id}"
+	public_ip_address_id= "${azurerm_public_ip.MyFirstPubIp.id}"
     }
 }
 

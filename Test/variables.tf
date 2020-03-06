@@ -13,6 +13,7 @@ variable "add_space" {
 variable "name_subnet2" {}
 variable "add_prefix1" {}
 variable "add_prefix2" {}
+variable "name_pubIp1" {}
 variable "name_nsg2" {}
 variable "allocation_method" {}
 variable "nameNIC3" {}

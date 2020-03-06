@@ -6,6 +6,7 @@ name_vnet= "PileVnet"
 add_space= [ "10.0.0.0/16" ]
 add_prefix1= "10.0.2.0/24"
 add_prefix2= "10.0.3.0/24"
+name_pubIp1= "pubIp1"
 name_subnet2= "Subnet2"
 name_nsg2= "Nsg2"
 allocation_method= "Dynamic"
