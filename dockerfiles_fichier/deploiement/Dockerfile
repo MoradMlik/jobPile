@@ -6,7 +6,7 @@ COPY ./terra/ /app/data/
 COPY ./.ssh/ /app/data/.ssh/
 CMD cd Nginx
 CMD terraform init
-CMD terraform destroy apply -var-file=main.tfvars -var-file=backend.tfvars
+CMD terraform destroy -var-file=main.tfvars -var-file=backend.tfvars
 CMD terraform -auto-approve apply -var-file=main.tfvars -var-file=backend.tfvars
 CMD cd ../Prod
 CMD terraform init
